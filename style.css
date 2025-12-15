@@ -819,3 +819,108 @@ background-color: #0b1d3a;
   color: #f1c27d;
 }
 
+
+
+@media (max-width: 600px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  /* ===== NAVBAR ===== */
+  .menu-box {
+    right: 20px;
+    height: 90px;
+    padding-top: 50px;
+  }
+
+  .fullscreen-menu {
+    width: 100%;
+  }
+
+  .menu-links a {
+    font-size: 22px;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    height: 100vh;
+    padding: 0 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-logo {
+    top: -60px;
+    left: 0;
+  }
+
+  /* ===== ABOUT ===== */
+  .about-us {
+    padding: 70px 15px;
+  }
+
+  .about-texts {
+    font-size: 1.1rem;
+  }
+
+  .about-image img {
+    width: 100%;
+  }
+
+  /* ===== CARDS ===== */
+  .card {
+    padding: 25px 15px;
+  }
+
+  /* ===== SERVICES TIMELINE ===== */
+  .timeline {
+    padding-top: 100px;
+  }
+
+  .timeline::before {
+    left: 50%;
+  }
+
+  .timeline-dot {
+    width: 60px;
+    height: 60px;
+    top: 10px;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact-circle {
+    width: 140px;
+    height: 140px;
+    font-size: 22px;
+  }
+
+  .contact-box {
+    width: 100%;
+  }
+
+  .social-icons a {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer div {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  * {
+    animation-duration: 0.8s !important;
+    transition-duration: 0.6s !important;
+  }
+}
+
