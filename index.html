@@ -361,6 +361,26 @@ window.addEventListener('scroll', () => {
   </div>
 </footer>
 
+<script>
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show", "active");
+      }
+    });
+  },
+  {
+    threshold: 0.15
+  }
+);
+
+document.querySelectorAll(
+  ".hidden, .animate-item, .reveal"
+).forEach(el => observer.observe(el));
+</script>
+
 
 </body>
+
 </html>
