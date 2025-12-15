@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- navbar -->
+ <header >
+<div class="menu-box">
+  <div class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<div class="fullscreen-menu" id="fullscreenMenu">
+  <div class="menu-inner">
+
+    <div class="menu-left">
+      <div class="menu-logo">
+        <img src="logo.png" alt="Logo de l'établissement">
+    </div>
+      <nav class="menu-links">
+        <a href="#home">Home</a>
+        <a href="#aboutus">About Us</a>
+        <a href="#">Programs</a>
+        <a href="#">Admissions</a>
+        <a href="#Contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="vertical-word">
+  <span>G</span>
+  <span>R</span>
+  <span>O</span>
+  <span>W</span>
+  <span>T</span>
+  <span>H</span>
+</div>
+
+
+
+  </div>
+</div>
+</header>
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const fullscreenMenu = document.getElementById("fullscreenMenu");
+
+// فتح وإغلاق القائمة
+menuToggle.addEventListener("click", () => {
+  menuToggle.classList.toggle("active");      // تحول الهامبرغر إلى X
+  fullscreenMenu.classList.toggle("active"); // فتح/إغلاق القائمة
+});
+
+// غلق القائمة عند الضغط على أي رابط
+document.querySelectorAll('.menu-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    menuToggle.classList.remove('active');
+    fullscreenMenu.classList.remove('active');
+  });
+});
+
+</script>
+
+<!-- hero section -->
+<section id="home" class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-bg"></div>
+
+  <div class="hero-container">
+
+    <div class="hero-logo">
+      <a href="#home">
+        <img src="logohome.jpeg" alt="School Logo">
+      </a>
+    </div>
+
+    <div class="hero-content">
+      <h1>Building Your Academic Future with Confidence</h1>
+      <p>
+        An educational institution delivering high-quality programs under the guidance
+        of experienced educators, within a modern learning environment designed for today’s needs.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#programs" class="btn primary">Explore Our Programs</a>
+        <a href="mailto:school@gmail.com" class="btn secondary">Contact Us</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+<script>
+const reveals = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
+      revealObserver.unobserve(entry.target); // لإيقاف المراقبة بعد التفعيل
+    }
+  });
+}, { threshold: 0.1 }); // 10% من العنصر يظهر
+
+// أرسل كل عنصر للمراقبة
+reveals.forEach(el => revealObserver.observe(el));
+
+</script>
+
+<!-- about us -->
+<section id="aboutus" class="about-us">
+  <div class="container">
+
+    <h1 class="section-title animate-item">About Us</h1>
+
+<div class="dynamic-text-wrapper animate-item">
+  <h2 class="typing-title" id="dynamic-text"></h2>
+  <div class="underline"></div>
+</div>
+
+
+    <div class="about-flex">
+      <div class="about-texts">
+        <p class="animate-item">We are a forward-thinking educational institution committed to empowering students through quality education, innovative teaching methods, and a supportive academic environment.</p>
+        <p class="animate-item">Our mission is to prepare learners for real-world challenges while fostering critical thinking and lifelong learning.</p>
+      </div>
+      <div class="about-image animate-item">
+        <img src="about.jpg" alt="Educational Institution">
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card animate-item">
+        <div class="card-icon"><img src="skills.png" alt="Academic Excellence"></div>
+        <h3>Academic Excellence</h3>
+        <p>Top-quality programs focused on knowledge, skills, and real-world application.</p>
+      </div>
+      <div class="card animate-item">
+        <div class="card-icon"><img src="educators.png" alt="Expert Educators"></div>
+        <h3>Expert Educators</h3>
+        <p>Highly qualified professionals dedicated to student success.</p>
+      </div>
+      <div class="card animate-item">
+        <div class="card-icon"><img src="modern.png" alt="Modern Facilities"></div>
+        <h3>Modern Facilities</h3>
+        <p>State-of-the-art classrooms and resources to enhance learning.</p>
+      </div>
+      <div class="card animate-item">
+        <div class="card-icon"><img src="support.png" alt="Student Support"></div>
+        <h3>Student Support</h3>
+        <p>Comprehensive guidance and counseling for academic and personal growth.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target); // يظهر مرة واحدة فقط
+      }
+    });
+  }, { threshold: 0.2 });
+
+  // استهداف كل العناصر التي لها كلاس animate-item
+  document.querySelectorAll('.animate-item').forEach(el => {
+    observer.observe(el);
+  });
+});
+</script>
+<script>
+ const textElement = document.getElementById("dynamic-text");
+
+const phrases = [
+  "Excellence in Education",
+  "Commitment to Your Future"
+];
+
+let currentPhrase = 0;
+let index = 0;
+let deleting = false;
+
+function type() {
+  if (!deleting) {
+    textElement.textContent = phrases[currentPhrase].slice(0, index + 1);
+    index++;
+    if (index === phrases[currentPhrase].length) {
+      setTimeout(() => {
+        deleting = true;
+        type();
+      }, 1000);
+    } else {
+      setTimeout(type, 80);
+    }
+  } else {
+    textElement.textContent = phrases[currentPhrase].slice(0, index - 1);
+    index--;
+    if (index === 0) {
+      deleting = false;
+      currentPhrase++;
+      if (currentPhrase === phrases.length) {
+        textElement.textContent = phrases.join(", ");
+        textElement.style.borderRight = "none";
+      } else {
+        setTimeout(type, 300);
+      }
+    } else {
+      setTimeout(type, 40);
+    }
+  }
+}
+
+type();
+
+</script>
+
+<!-- services section -->
+<section id="services" class="services-section">
+  <div class="container">
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="timeline">
+      <div class="timeline-dot">
+        <img src="education.png" alt="Education Icon">
+      </div>
+
+      <div class="timeline-item left hidden">
+        <img src="CustomizedAcademicPrograms.jpg" alt="">
+        <div class="content">
+          <h3>Customized Academic Programs</h3>
+          <p>Customized learning programs designed to meet each learner’s needs.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item right hidden">
+        <img src="ExpertTrainers.jpg" alt="">
+        <div class="content">
+          <h3>Expert Trainers</h3>
+          <p>Certified instructors with strong academic and practical experience.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item left hidden">
+        <img src="beuro.jpg" alt="">
+        <div class="content">
+          <h3>Modern Facilities</h3>
+          <p>Interactive classrooms equipped with modern learning tools.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item right hidden">
+        <img src="Diversespecializations.jpg" alt="">
+        <div class="content">
+          <h3>Diverse Specializations</h3>
+          <p>We provide opportunities to learn and develop skills across multiple fields aligned with future demands.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script >
+  const items = document.querySelectorAll('.timeline-item');
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  },
+  { threshold: 0.3 }
+);
+
+items.forEach(item => observer.observe(item));
+</script>
+
+<!-- CONTACT SECTION -->
+<section id="Contact" class="contact-section">
+
+  <div class="contact-circle">CONTACT</div>
+
+  <div class="contact-info">
+  <div class="contact-box reveal">
+    <h3>Contact Details</h3>
+    <p>
+      Email: info@school.com<br>
+      Phone: +213 XX XX XX XX<br>
+      Address: Oran, Algeria
+    </p>
+  </div>
+
+  <div class="contact-box reveal">
+    <h3>School Information</h3>
+    <ul class="school-list">
+      <li><a href="#">Term Dates</a></li>
+      <li><a href="#">Staff List</a></li>
+      <li><a href="#">Governing Body</a></li>
+      <li><a href="#">News</a></li>
+    </ul>
+  </div>
+
+  <div class="contact-box reveal">
+    <h3>Our Community</h3>
+    <p>RMGC Holding</p>
+  </div>
+</div>
+
+
+  <div class="contact-links">
+    <h3>Our Links</h3>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
+
+</section>
+<script>
+  const revealsContact = document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll', () => {
+  revealsContact.forEach(el => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    const elementVisible = 100; // المسافة من الأسفل لتفعيل الانيميشن
+
+    if (elementTop < windowHeight - elementVisible) {
+      el.classList.add('active');
+    } else {
+      el.classList.remove('active'); // يمكن إزالته إذا أردت ظهور مرة واحدة فقط
+    }
+  });
+});
+
+</script>
+
+
+<!-- footer -->
+<footer class="footer">
+  <div >
+    Institut de Management et de Gestion
+  </div>
+  <div class="footer-rights">
+    © Copyright 2024 BY INVEST MARKET RMGC HOLDING &nbsp; | &nbsp; Privacy and Terms
+  </div>
+</footer>
+
+
+</body>
+</html>
