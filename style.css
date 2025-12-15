@@ -828,14 +828,17 @@ background-color: #0b1d3a;
   }
 
   /* ===== NAVBAR ===== */
-  .menu-box {
-    right: 20px;
-    height: 90px;
-    padding-top: 50px;
+ .menu-box {
+    display: flex; /* يخفي زر الهمبرغر افتراضياً */
   }
 
   .fullscreen-menu {
-    width: 100%;
+    right: -100%; /* يتأكد أن القائمة مخفية خارج الشاشة */
+    display: flex; /* فقط لتهيئة flex layout */
+  }
+
+  .fullscreen-menu.active {
+    right: 0; /* تظهر عند تفعيل الزر */
   }
 
   .menu-links a {
@@ -923,4 +926,5 @@ background-color: #0b1d3a;
     transition-duration: 0.6s !important;
   }
 }
+
 
