@@ -179,8 +179,8 @@ body {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .menu-box {
-    right: 10px; /* داخل الشاشة */
-    top: 10px;   /* داخل الشاشة */
+    right: 5px;
+    top: 5px;  
     width: 56px;
     height: 56px;
     padding-top: 0;
@@ -189,7 +189,7 @@ body {
 
   .lang-toggle {
     top: 10px;
-    right: 76px; /* اترك مسافة بين زر اللغة والهامبرغر */
+    right: 76px; 
     font-size: 18px;
     z-index: 1003;
   }
@@ -875,6 +875,7 @@ background-color: #0b1d3a;
   font-size: 14px;
   color: #f1c27d;
 }
+
 
 
 
