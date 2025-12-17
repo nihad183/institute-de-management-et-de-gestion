@@ -178,53 +178,44 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+  .menu-box {
+    right: 10px; /* ابقِ الزر ثابتًا */
+    top: 10px;   /* يمكنك تعديل حسب الحاجة */
+    width: 56px;
+    height: 56px; /* أصغر في الهاتف */
+    padding-top: 0; /* إزالة padding ليصبح صغير */
+  }
+
   .fullscreen-menu {
     width: 100%;
-    right: -100%;
+    right: -100%; /* يبدأ مخفي */
   }
 
   .fullscreen-menu.active {
-    right: 0;
+    right: 0; /* يظهر كامل الشاشة فوق المحتوى */
   }
-  .menu-box{
-    right: 0;
-    width: 56px;
-  }
+
   .menu-inner {
-    flex-direction: row;
-    align-items: center;
-    padding: 30px 20px;
+    flex-direction: column;
+    padding: 60px 20px;
+    align-items: flex-start;
   }
 
   .menu-left {
-    flex: 1;
-    gap: 40px;
-  }
-
-  .menu-logo img {
-    width: 80px;
-    height: auto;
+    gap: 30px;
   }
 
   .menu-links a {
-    font-size: 22px;
-  }
-
-  .menu-links a::after {
-    width: calc(100% + 80px);
-  }
-
-  .menu-links a::before {
-    right: -70px;
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .vertical-word {
     margin-right: 10px;
-    font-size: 32px;
+    font-size: 32px; /* أصغر فقط */
     letter-spacing: 2px;
   }
 }
+
 
 /* HERO SECTION */
 .hero {
@@ -861,5 +852,6 @@ background-color: #0b1d3a;
   font-size: 14px;
   color: #f1c27d;
 }
+
 
 
