@@ -17,7 +17,7 @@ body {
 .menu-box {
   position: fixed;
   top: 0;
-  right: 82px;
+  right: 5vw;
   width: 56px;
   height: 110px;
   background: #212c3f;
@@ -186,7 +186,10 @@ body {
   .fullscreen-menu.active {
     right: 0;
   }
-
+  .menu-box{
+    right: 0;
+    width: 56px;
+  }
   .menu-inner {
     flex-direction: row;
     align-items: center;
@@ -858,4 +861,5 @@ background-color: #0b1d3a;
   font-size: 14px;
   color: #f1c27d;
 }
+
 
