@@ -179,8 +179,8 @@ body {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .menu-box {
-    right: 5px;
-    top: 5px;  
+    right: 20px;
+    top: 20px;  
     width: 56px;
     height: 56px;
     padding-top: 0;
@@ -875,6 +875,7 @@ background-color: #0b1d3a;
   font-size: 14px;
   color: #f1c27d;
 }
+
 
 
 
