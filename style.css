@@ -671,47 +671,64 @@ p, .about-texts p, .card p {
 @media (max-width: 768px) {
 
   .section-title {
-    font-size: 2.1rem;
+    font-size: 1.9rem;
+    margin-bottom: 50px;
+  }
+
+  /* timeline */
+  .timeline {
+    padding-top: 90px;
   }
 
   .timeline::before {
-    left: 50%;
-  }
-
-  .timeline-item {
-    width: 50%;
-    padding: 20px;
-  }
-
-  .timeline-item.left {
-    left: 0;
-    justify-content: flex-end;
-  }
-
-  .timeline-item.right {
-    left: 50%;
-    justify-content: flex-start;
-  }
-
-  .timeline-item::before {
     top: 70px;
   }
 
+  /* العناصر */
+  .timeline-item {
+    width: 50%;
+    padding: 12px;
+  }
+
+  .timeline-item::before {
+    top: 55px;
+    width: 10px;
+    height: 10px;
+  }
+
+  /* الكارد */
+  .card {
+    transform: scale(0.9); /* السر هنا */
+  }
+
+  /* الصورة */
   .card img {
-    width: 120px;
-    height: 90px;
-    margin-bottom: -28px;
+    width: 85px;
+    height: 65px;
+    margin-bottom: -18px;
+    border-radius: 10px;
   }
 
+  /* المحتوى */
   .content {
-    max-width: 260px;
-    padding: 35px 15px 15px;
-    font-size: 0.95rem;
+    max-width: 210px;
+    padding: 22px 12px 12px;
   }
 
+  .content h3 {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+  }
+
+  .content p {
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+
+  /* الدائرة العلوية */
   .timeline-dot {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
   }
 
   .timeline-dot img {
@@ -719,7 +736,6 @@ p, .about-texts p, .card p {
     height: 55%;
   }
 }
-
 
  /* ===== CONTACT SECTION ===== */
 .contact-section {
@@ -876,6 +892,7 @@ background-color: #0b1d3a;
   font-size: 14px;
   color: #f1c27d;
 }
+
 
 
 
