@@ -179,34 +179,57 @@ body {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .menu-box {
-    right: 10px; /* ابقِ الزر ثابتًا */
-    top: 10px;   /* يمكنك تعديل حسب الحاجة */
+    right: 10px; /* داخل الشاشة */
+    top: 10px;   /* داخل الشاشة */
     width: 56px;
-    height: 56px; /* أصغر في الهاتف */
-    padding-top: 0; /* إزالة padding ليصبح صغير */
+    height: 56px;
+    padding-top: 0;
+    z-index: 1002;
   }
 
-  .fullscreen-menu {
+  .lang-toggle {
+    top: 10px;
+    right: 76px; /* اترك مسافة بين زر اللغة والهامبرغر */
+    font-size: 18px;
+    z-index: 1003;
+  }
+
+   .fullscreen-menu {
     width: 100%;
-    right: -100%; /* يبدأ مخفي */
+    right: -100%;
   }
 
   .fullscreen-menu.active {
-    right: 0; /* يظهر كامل الشاشة فوق المحتوى */
+    right: 0;
   }
 
   .menu-inner {
-    flex-direction: column;
-    padding: 60px 20px;
-    align-items: flex-start;
+    flex-direction: row; /* نفس الكمبيوتر */
+    align-items: center;
+    padding: 30px 20px;
   }
 
   .menu-left {
-    gap: 30px;
+    flex: 1;
+    gap: 40px;
+  }
+
+  .menu-logo img {
+    width: 80px;
+    height: auto;
   }
 
   .menu-links a {
-    font-size: 20px;
+    font-size: 22px;
+  }
+
+  .menu-links a::after {
+    width: calc(100% + 80px);
+  }
+
+  .menu-links a::before {
+    right: -70px;
+    font-size: 22px;
   }
 
   .vertical-word {
@@ -852,6 +875,7 @@ background-color: #0b1d3a;
   font-size: 14px;
   color: #f1c27d;
 }
+
 
 
 
