@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Institut de Management et de Gestion </title>
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,62 +14,67 @@
 <body>
 
 <!-- navbar -->
- <header >
-<div class="menu-box">
-  <div class="menu-toggle" id="menuToggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<div class="fullscreen-menu" id="fullscreenMenu">
-  <div class="menu-inner">
-
-    <div class="menu-left">
-      <div class="menu-logo">
-        <img src="logo.png" alt="Logo de l'établissement">
+<header>
+  <div class="menu-box">
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-      <nav class="menu-links">
-        <a href="#home">Home</a>
-        <a href="#aboutus">About Us</a>
-        <a href="#">Programs</a>
-        <a href="#">Admissions</a>
-        <a href="#Contact">Contact</a>
-      </nav>
-    </div>
-
-    <div class="vertical-word">
-  <span>G</span>
-  <span>R</span>
-  <span>O</span>
-  <span>W</span>
-  <span>T</span>
-  <span>H</span>
-</div>
-
-
-
   </div>
-</div>
+
+  <a href="#" class="lang-toggle" id="langToggle">EN</a>
+
+  <div class="fullscreen-menu" id="fullscreenMenu">
+    <div class="menu-inner">
+
+      <div class="menu-left">
+        <div class="menu-logo">
+          <img src="logo.png" alt="Logo de l’établissement">
+        </div>
+
+       <nav class="menu-links">
+          <a href="#home" id="home">Accueil</a>
+          <a href="#aboutus" id="about">À propos</a>
+          <a href="#programs" id="programs">Programmes</a>
+          <a href="#admissions" id="admissions">Admissions</a>
+          <a href="#contact" id="contact">Contact</a>
+       </nav>
+
+      </div>
+
+      <div class="vertical-word" id="vertical-word">
+        <span>C</span>
+        <span>R</span>
+        <span>O</span>
+        <span>I</span>
+        <span>S</span>
+        <span>S</span>
+        <span>A</span>
+        <span>N</span>
+        <span>C</span>
+        <span>E</span>
+      </div>
+
+    </div>
+  </div>
 </header>
 <script>
 const menuToggle = document.getElementById("menuToggle");
 const fullscreenMenu = document.getElementById("fullscreenMenu");
 
-// فتح وإغلاق القائمة
 menuToggle.addEventListener("click", () => {
-  menuToggle.classList.toggle("active");      // تحول الهامبرغر إلى X
-  fullscreenMenu.classList.toggle("active"); // فتح/إغلاق القائمة
+  menuToggle.classList.toggle("active");     
+  fullscreenMenu.classList.toggle("active"); 
 });
 
-// غلق القائمة عند الضغط على أي رابط
 document.querySelectorAll('.menu-links a').forEach(link => {
   link.addEventListener('click', () => {
     menuToggle.classList.remove('active');
     fullscreenMenu.classList.remove('active');
   });
+  
 });
-
 </script>
 
 <!-- hero section -->
@@ -80,20 +86,21 @@ document.querySelectorAll('.menu-links a').forEach(link => {
 
     <div class="hero-logo">
       <a href="#home">
-        <img src="logohome.jpeg" alt="School Logo">
+        <img src="logohome.jpeg" alt="Logo de l’établissement">
       </a>
     </div>
 
     <div class="hero-content">
-      <h1>Building Your Academic Future with Confidence</h1>
-      <p>
-        An educational institution delivering high-quality programs under the guidance
-        of experienced educators, within a modern learning environment designed for today’s needs.
+      <h1 id="hero-title">Construire votre avenir académique avec confiance</h1>
+      <p id="hero-text">
+        Un établissement d’enseignement offrant des programmes de haute qualité,
+        encadrés par des éducateurs expérimentés, dans un environnement d’apprentissage
+        moderne et adapté aux exigences d’aujourd’hui.
       </p>
 
       <div class="hero-buttons">
-        <a href="#programs" class="btn primary">Explore Our Programs</a>
-        <a href="mailto:school@gmail.com" class="btn secondary">Contact Us</a>
+        <a href="#programs" id="hero-btn1" class="btn primary">Découvrir nos programmes</a>
+        <a href="mailto:school@gmail.com" id="hero-btn2" class="btn secondary">Nous contacter</a>
       </div>
     </div>
 
@@ -106,170 +113,155 @@ const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
       entry.target.classList.add('active');
-      revealObserver.unobserve(entry.target); // لإيقاف المراقبة بعد التفعيل
+      revealObserver.unobserve(entry.target); 
     }
   });
-}, { threshold: 0.1 }); // 10% من العنصر يظهر
+}, { threshold: 0.1 }); 
 
-// أرسل كل عنصر للمراقبة
 reveals.forEach(el => revealObserver.observe(el));
 
 </script>
 
-<!-- about us -->
+<!-- about us section -->
 <section id="aboutus" class="about-us">
-  <div class="container">
 
-    <h1 class="section-title animate-item">About Us</h1>
+  <h1 class="section-title animate-item" id="about-title">À propos de nous</h1>
 
-<div class="dynamic-text-wrapper animate-item">
-  <h2 class="typing-title" id="dynamic-text"></h2>
-  <div class="underline"></div>
-</div>
-
-
-    <div class="about-flex">
-      <div class="about-texts">
-        <p class="animate-item">We are a forward-thinking educational institution committed to empowering students through quality education, innovative teaching methods, and a supportive academic environment.</p>
-        <p class="animate-item">Our mission is to prepare learners for real-world challenges while fostering critical thinking and lifelong learning.</p>
-      </div>
-      <div class="about-image animate-item">
-        <img src="about.jpg" alt="Educational Institution">
-      </div>
-    </div>
-
-    <div class="cards">
-      <div class="card animate-item">
-        <div class="card-icon"><img src="skills.png" alt="Academic Excellence"></div>
-        <h3>Academic Excellence</h3>
-        <p>Top-quality programs focused on knowledge, skills, and real-world application.</p>
-      </div>
-      <div class="card animate-item">
-        <div class="card-icon"><img src="educators.png" alt="Expert Educators"></div>
-        <h3>Expert Educators</h3>
-        <p>Highly qualified professionals dedicated to student success.</p>
-      </div>
-      <div class="card animate-item">
-        <div class="card-icon"><img src="modern.png" alt="Modern Facilities"></div>
-        <h3>Modern Facilities</h3>
-        <p>State-of-the-art classrooms and resources to enhance learning.</p>
-      </div>
-      <div class="card animate-item">
-        <div class="card-icon"><img src="support.png" alt="Student Support"></div>
-        <h3>Student Support</h3>
-        <p>Comprehensive guidance and counseling for academic and personal growth.</p>
-      </div>
-    </div>
-
+  <div class="dynamic-text-wrapper animate-item">
+    <h2 class="typing-title" id="dynamic-text">Bienvenue dans notre établissement</h2>
+    <div class="underline"></div>
   </div>
+
+  <div class="about-flex">
+    <div class="about-texts">
+      <p class="animate-item" id="about-text1">
+        Nous sommes un établissement d’enseignement innovant, engagé à accompagner les étudiants
+        à travers une éducation de qualité et des méthodes pédagogiques modernes.
+      </p>
+      <p class="animate-item" id="about-text2">
+        Notre mission est de préparer les apprenants aux défis du monde réel tout en favorisant
+        l’esprit critique et l’apprentissage tout au long de la vie.
+      </p>
+    </div>
+
+    <div class="about-image animate-item">
+      <img src="about.jpg" alt="À propos de notre établissement">
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card animate-item">
+      <div class="card-icon"><img src="skills.png" alt="Excellence académique"></div>
+      <h3 id="card1-title">Excellence académique</h3>
+      <p id="card1-text">Des programmes de haute qualité axés sur les compétences et les applications concrètes.</p>
+    </div>
+
+    <div class="card animate-item">
+      <div class="card-icon"><img src="educators.png" alt="Éducateurs experts"></div>
+      <h3 id="card2-title">Éducateurs experts</h3>
+      <p id="card2-text">Des enseignants hautement qualifiés, dédiés à la réussite des étudiants.</p>
+    </div>
+
+    <div class="card animate-item">
+      <div class="card-icon"><img src="modern.png" alt="Installations modernes"></div>
+      <h3 id="card3-title">Installations modernes</h3>
+      <p id="card3-text">Des salles de classe modernes et des ressources pédagogiques avancées.</p>
+    </div>
+
+    <div class="card animate-item">
+      <div class="card-icon"><img src="support.png" alt="Accompagnement des étudiants"></div>
+      <h3 id="card4-title">Accompagnement des étudiants</h3>
+      <p id="card4-text">Un suivi personnalisé et un accompagnement pédagogique et académique complet.</p>
+    </div>
+  </div>
+
 </section>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const observer = new IntersectionObserver((entries, observer) => {
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".animate-item");
+
+  const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('show');
-        observer.unobserve(entry.target); // يظهر مرة واحدة فقط
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.2 });
 
-  // استهداف كل العناصر التي لها كلاس animate-item
-  document.querySelectorAll('.animate-item').forEach(el => {
-    observer.observe(el);
-  });
+  items.forEach(item => observer.observe(item));
 });
-</script>
-<script>
- const textElement = document.getElementById("dynamic-text");
 
-const phrases = [
-  "Excellence in Education",
-  "Commitment to Your Future"
-];
+const textElement = document.getElementById("dynamic-text");
+const phrases = ["L’excellence dans l’éducation",
+  "Un engagement pour votre avenir"];
+let phraseIndex = 0, charIndex = 0, deleting = false;
 
-let currentPhrase = 0;
-let index = 0;
-let deleting = false;
+function typeEffect() {
+  const current = phrases[phraseIndex];
 
-function type() {
   if (!deleting) {
-    textElement.textContent = phrases[currentPhrase].slice(0, index + 1);
-    index++;
-    if (index === phrases[currentPhrase].length) {
-      setTimeout(() => {
-        deleting = true;
-        type();
-      }, 1000);
-    } else {
-      setTimeout(type, 80);
+    textElement.textContent = current.slice(0, ++charIndex);
+    if (charIndex === current.length) {
+      setTimeout(() => deleting = true, 1200);
     }
   } else {
-    textElement.textContent = phrases[currentPhrase].slice(0, index - 1);
-    index--;
-    if (index === 0) {
+    textElement.textContent = current.slice(0, --charIndex);
+    if (charIndex === 0) {
       deleting = false;
-      currentPhrase++;
-      if (currentPhrase === phrases.length) {
-        textElement.textContent = phrases.join(", ");
-        textElement.style.borderRight = "none";
-      } else {
-        setTimeout(type, 300);
-      }
-    } else {
-      setTimeout(type, 40);
+      phraseIndex = (phraseIndex + 1) % phrases.length;
     }
   }
+  setTimeout(typeEffect, deleting ? 50 : 90);
 }
-
-type();
-
+typeEffect();
 </script>
+
 
 <!-- services section -->
 <section id="services" class="services-section">
   <div class="container">
-    <h2 class="section-title">Our Services</h2>
+    <h2 class="section-title" id="services-title">Nos services</h2>
 
     <div class="timeline">
       <div class="timeline-dot">
-        <img src="education.png" alt="Education Icon">
+        <img src="education.png" alt="Icône éducation">
       </div>
 
       <div class="timeline-item left hidden">
         <img src="CustomizedAcademicPrograms.jpg" alt="">
         <div class="content">
-          <h3>Customized Academic Programs</h3>
-          <p>Customized learning programs designed to meet each learner’s needs.</p>
+          <h3 id="service1-title">Programmes académiques personnalisés</h3>
+          <p id="service1-text">Des programmes d’apprentissage sur mesure conçus pour répondre aux besoins de chaque apprenant.</p>
         </div>
       </div>
 
       <div class="timeline-item right hidden">
         <img src="ExpertTrainers.jpg" alt="">
         <div class="content">
-          <h3>Expert Trainers</h3>
-          <p>Certified instructors with strong academic and practical experience.</p>
+          <h3 id="service2-title">Formateurs experts</h3>
+          <p id="service2-text">Des instructeurs certifiés disposant d’une solide expérience académique et pratique.</p>
         </div>
       </div>
 
       <div class="timeline-item left hidden">
         <img src="beuro.jpg" alt="">
         <div class="content">
-          <h3>Modern Facilities</h3>
-          <p>Interactive classrooms equipped with modern learning tools.</p>
+          <h3 id="service3-title">Installations modernes</h3>
+          <p id="service3-text">Des salles de classe interactives équipées d’outils pédagogiques modernes.</p>
         </div>
       </div>
 
       <div class="timeline-item right hidden">
         <img src="Diversespecializations.jpg" alt="">
         <div class="content">
-          <h3>Diverse Specializations</h3>
-          <p>We provide opportunities to learn and develop skills across multiple fields aligned with future demands.</p>
+          <h3 id="service4-title">Spécialisations diversifiées</h3>
+          <p id="service4-text">Nous offrons des opportunités de formation et de développement des compétences dans plusieurs domaines, en adéquation avec les exigences de l’avenir.</p>
         </div>
       </div>
 
     </div>
-  </div>
+  </div>  
 </section>
 <script >
   const items = document.querySelectorAll('.timeline-item');
@@ -291,37 +283,36 @@ items.forEach(item => observer.observe(item));
 <!-- CONTACT SECTION -->
 <section id="Contact" class="contact-section">
 
-  <div class="contact-circle">CONTACT</div>
+  <div class="contact-circle" id="contact-circle">CONTACT</div>
 
   <div class="contact-info">
-  <div class="contact-box reveal">
-    <h3>Contact Details</h3>
-    <p>
-      Email: info@school.com<br>
-      Phone: +213 XX XX XX XX<br>
-      Address: Oran, Algeria
-    </p>
-  </div>
+    <div class="contact-box reveal">
+      <h3 id="contact1-title">Coordonnées</h3>
+      <p id="contact1-text">
+        Email : info@school.com<br>
+        Téléphone : +213 XX XX XX XX<br>
+        Adresse : Oran, Algérie
+      </p>
+    </div>
 
-  <div class="contact-box reveal">
-    <h3>School Information</h3>
-    <ul class="school-list">
-      <li><a href="#">Term Dates</a></li>
-      <li><a href="#">Staff List</a></li>
-      <li><a href="#">Governing Body</a></li>
-      <li><a href="#">News</a></li>
-    </ul>
-  </div>
+    <div class="contact-box reveal">
+      <h3 id="contact2-title">Informations de l’établissement</h3>
+      <ul class="school-list">
+        <li><a id="contact-link1" href="#">Calendrier scolaire</a></li>
+        <li><a id="contact-link2" href="#">Liste du personnel</a></li>
+        <li><a id="contact-link3" href="#">Conseil d’administration</a></li>
+        <li><a id="contact-link4" href="#">Actualités</a></li>
+      </ul>
+    </div>
 
-  <div class="contact-box reveal">
-    <h3>Our Community</h3>
-    <p>RMGC Holding</p>
+    <div class="contact-box reveal">
+      <h3 id="contact3-title">Notre communauté</h3>
+      <p id="contact3-text">RMGC Holding</p>
+    </div>
   </div>
-</div>
-
 
   <div class="contact-links">
-    <h3>Our Links</h3>
+    <h3 id="links-title">Nos liens</h3>
     <div class="social-icons">
       <a href="#"><i class="fab fa-instagram"></i></a>
       <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -331,6 +322,7 @@ items.forEach(item => observer.observe(item));
   </div>
 
 </section>
+
 <script>
   const revealsContact = document.querySelectorAll('.reveal');
 
@@ -361,26 +353,9 @@ window.addEventListener('scroll', () => {
   </div>
 </footer>
 
-<script>
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show", "active");
-      }
-    });
-  },
-  {
-    threshold: 0.15
-  }
-);
 
-document.querySelectorAll(
-  ".hidden, .animate-item, .reveal"
-).forEach(el => observer.observe(el));
-</script>
 
+<script src="script.js"></script>
 
 </body>
-
 </html>
