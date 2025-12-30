@@ -55,7 +55,7 @@ body {
   top: 20px;
   right: 20px;
   font-size: 20px;
-  color: #f1c27d;
+  color: #ee9209;
   text-decoration: none;
   cursor: pointer;
   z-index: 1003;
@@ -253,8 +253,8 @@ body {
   inset: 0;
   background:
     linear-gradient(
-      rgba(33, 44, 63, 0.85),
-      rgba(33, 44, 63, 0.85)
+     rgba(33, 44, 63, 0.514),
+     rgba(33, 44, 63, 0.85)
     ),
     url("class.jpg");
   background-size: cover;
@@ -894,6 +894,7 @@ background-color: #0b1d3a;
   font-size: 14px;
   color: #f1c27d;
 }
+
 
 
 
