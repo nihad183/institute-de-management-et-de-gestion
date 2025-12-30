@@ -49,8 +49,6 @@ const translations = {
     "links-title": "Nos liens"
   },
   EN: {
-  },
-  EN: {
     home: "Home",
     about: "About Us",
     programs: "Programs",
@@ -98,6 +96,53 @@ const translations = {
     "contact3-text": "RMGC Holding",
     "links-title": "Our Links"
 
+  },
+  AR: {
+    home: "الرئيسية",
+    about: "من نحن",
+    programs: "البرامج",
+    admissions: "القبول",
+    contact: "اتصل بنا",
+    "home-title": "مرحبًا بكم في المعهد",
+    "home-text": "نقدم برامج عالية الجودة في الإدارة والأعمال.",
+    "about-title": "من نحن",
+    "about-text": "تأسس معهدنا في عام 2000 لتدريب القادة المستقبليين.",
+    "vertical-word": "النمو",
+    "hero-title": "ابنِ مستقبلك الأكاديمي بثقة",
+    "hero-text": "مؤسسة تعليمية تقدم برامج عالية الجودة بإشراف معلمين ذوي خبرة، في بيئة تعليمية حديثة تلبي متطلبات اليوم.",
+    "hero-btn1": "اكتشف برامجنا",
+    "hero-btn2": "اتصل بنا",
+    "dynamic-text": "مرحبًا بكم في مؤسستنا",
+    "about-text1": "نحن مؤسسة تعليمية مبتكرة، ملتزمون بتوجيه الطلاب من خلال تعليم عالي الجودة وأساليب تدريس حديثة.",
+    "about-text2": "مهمتنا هي إعداد المتعلمين لمواجهة تحديات العالم الواقعي مع تعزيز التفكير النقدي والتعلم مدى الحياة.",
+    "card1-title": "تميز أكاديمي",
+    "card1-text": "برامج عالية الجودة تركز على المهارات والتطبيقات العملية.",
+    "card2-title": "معلمون خبراء",
+    "card2-text": "معلمون مؤهلون تأهيلاً عالياً، ملتزمون بنجاح الطلاب.",
+    "card3-title": "مرافق حديثة",
+    "card3-text": "صفوف دراسية حديثة وموارد تعليمية متقدمة.",
+    "card4-title": "دعم الطلاب",
+    "card4-text": "توجيه شخصي ودعم أكاديمي متكامل.",
+    "services-title": "خدماتنا",
+    "service1-title": "برامج أكاديمية مخصصة",
+    "service1-text": "برامج تعليمية مصممة لتلبية احتياجات كل متعلم.",
+    "service2-title": "مدربون خبراء",
+    "service2-text": "مدربون معتمدون ذو خبرة أكاديمية وعملية قوية.",
+    "service3-title": "مرافق حديثة",
+    "service3-text": "صفوف تفاعلية مجهزة بأدوات تعليمية حديثة.",
+    "service4-title": "تخصصات متنوعة",
+    "service4-text": "نقدم فرص التدريب وتطوير المهارات في عدة مجالات، بما يتوافق مع متطلبات المستقبل.",
+    "contact-circle": "اتصل بنا",
+    "contact1-title": "بيانات الاتصال",
+    "contact1-text": "البريد الإلكتروني: info@school.com\nالهاتف: +213 XX XX XX XX\nالعنوان: وهران، الجزائر",
+    "contact2-title": "معلومات المؤسسة",
+    "contact-link1": "التقويم الأكاديمي",
+    "contact-link2": "قائمة الموظفين",
+    "contact-link3": "مجلس الإدارة",
+    "contact-link4": "الأخبار",
+    "contact3-title": "مجتمعنا",
+    "contact3-text": "RMGC Holding",
+    "links-title": "روابطنا"
   }
 };
 
@@ -122,17 +167,18 @@ function setLanguage(lang) {
 
 
 const langToggle = document.getElementById('langToggle');
-let currentLang = 'FR'; 
+let languages = ['FR', 'EN', 'AR']; 
+let currentIndex = 0; 
+
+setLanguage(languages[currentIndex]);
+langToggle.textContent = 'FR'; 
 
 langToggle.addEventListener('click', (e) => {
   e.preventDefault();
-  if (currentLang === 'FR') {
-    currentLang = 'EN';
-    langToggle.textContent = 'FR'; 
-  } else {
-    currentLang = 'FR';
-    langToggle.textContent = 'EN';
-  }
+  currentIndex = (currentIndex + 1) % languages.length;
+  const currentLang = languages[currentIndex];
   setLanguage(currentLang);
+  langToggle.textContent = currentLang; 
 });
+
 
